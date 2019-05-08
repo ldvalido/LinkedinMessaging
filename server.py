@@ -13,9 +13,8 @@ class Messages(Resource):
         userName = os.environ['linkedinUserName']
         password = os.environ['linkedinPassword']
         linkedin = Linkedin(userName, password)
-        profile = linkedin.get_profile('leandrovalido')
+        profile = linkedin.get_profile(profileName)
         firstName = profile['firstName']
-        print(firstName)
         profile_urn_id = profile['profile_id']
         conversation_details = linkedin.get_conversation_details(profile_urn_id)
         conversation_id = conversation_details['id']
