@@ -25,5 +25,5 @@ class Diagnostics(Resource):
 api.add_resource(Messages, '/messages/<profileName>') # Route_1
 api.add_resource(Diagnostics, '/diagnostics')
 if __name__ == '__main__':
-     app.run(port='5002')
+     app.run(port='33507')
      
