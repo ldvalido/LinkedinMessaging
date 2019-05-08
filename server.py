@@ -3,6 +3,7 @@ from flask_restful import Resource, Api
 from json import dumps
 #from flask.ext.jsonpify import jsonpify
 from linkedin_api import Linkedin
+import os
 
 app = Flask(__name__)
 api = Api(app)
@@ -24,6 +25,8 @@ class Diagnostics(Resource):
 
 api.add_resource(Messages, '/messages/<profileName>') # Route_1
 api.add_resource(Diagnostics, '/diagnostics')
+
 if __name__ == '__main__':
-     app.run(port='33507')
+    port = int(os.environ.get('PORT', 5002))
+    app.run(port=port)
      
