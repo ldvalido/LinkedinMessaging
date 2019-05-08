@@ -18,9 +18,12 @@ class Messages(Resource):
         conversation_id = conversation_details['id']
         return linkedin.send_message(conversation_urn_id=conversation_id, message_body="No I will not be your technical cofounder")
 
+class Diagnostics(Resource):
+    def get(self):
+        return "ping"
 
 api.add_resource(Messages, '/messages/<profileName>') # Route_1
-
+api.add_resource(Diagnostics, '/diagnostics')
 if __name__ == '__main__':
      app.run(port='5002')
      
