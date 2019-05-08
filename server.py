@@ -9,7 +9,7 @@ api = Api(app)
 
 class Messages(Resource):
     def get(self, profileName):
-        linkedin = Linkedin('digitkauconsulting@gmail.com', 'R35bpmdq')
+        linkedin = Linkedin('userName', 'password')
         profile = linkedin.get_profile('leandrovalido')
         firstName = profile['firstName']
         print(firstName)
